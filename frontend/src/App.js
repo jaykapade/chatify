@@ -1,5 +1,4 @@
 import "./App.css";
-import { Button } from "@chakra-ui/react";
 import { Route, Routes } from "react-router-dom";
 import Chat from "./pages/Chat";
 import Home from "./pages/Home";
