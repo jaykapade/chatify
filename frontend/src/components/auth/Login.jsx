@@ -19,8 +19,8 @@ const Login = () => {
   const toast = useToast();
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   const submitHandler = async () => {
@@ -73,21 +73,23 @@ const Login = () => {
 
   return (
     <VStack spacing="10px">
-      <FormControl id="email" isRequired>
+      <FormControl id="loginemail" isRequired>
         <FormLabel>Email Address</FormLabel>
         <Input
           type="email"
+          value={email}
           placeholder="Enter Your Email Address"
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
-      <FormControl id="password" isRequired>
+      <FormControl id="loginpassword" isRequired>
         <FormLabel>Password</FormLabel>
         <InputGroup size="md">
           <Input
             onChange={(e) => setPassword(e.target.value)}
             type={show ? "text" : "password"}
             placeholder="Enter password"
+            value={password}
           />
           <InputRightElement width="4.5rem">
             <Button h="1.75rem" size="sm" onClick={handleClick}>
