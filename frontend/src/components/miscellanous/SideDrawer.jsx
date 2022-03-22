@@ -14,6 +14,7 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  Spinner,
   Text,
   Tooltip,
   useDisclosure,
@@ -183,7 +184,7 @@ const SideDrawer = () => {
                 />
               ))
             )}
-            {/* {loadingChat && <Spinner ml="auto" d="flex" />} */}
+            {loadingChat && <Spinner ml="auto" d="flex" />}
           </DrawerBody>
         </DrawerContent>
       </Drawer>
