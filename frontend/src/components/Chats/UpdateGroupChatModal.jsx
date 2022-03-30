@@ -23,7 +23,7 @@ import axios from "axios";
 import UserBadgeItem from "../Users/UserBadgeItem";
 import UserListItem from "../Users/UserListItem";
 
-const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain }) => {
+const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [groupChatName, setGroupChatName] = useState();
   const [search, setSearch] = useState("");
@@ -184,7 +184,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain }) => {
 
       user1._id === user._id ? setSelectedChat() : setSelectedChat(data);
       setFetchAgain(!fetchAgain);
-      //TODO   fetchMessages();
+      fetchMessages();
       setLoading(false);
     } catch (error) {
       toast({
