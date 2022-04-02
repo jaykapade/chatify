@@ -14,17 +14,19 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("API is live");
-});
+// app.get("/", (req, res) => {
+//   res.send("API is live");
+// });
 
 //User Routes
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
 
-//!------- start Deployment
+// --------------------------deployment------------------------------
+
 const __dirname1 = path.resolve();
+console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname1, "/frontend/build")));
 
@@ -36,7 +38,9 @@ if (process.env.NODE_ENV === "production") {
     res.send("API is running..");
   });
 }
-//!------- end Deployment
+
+// --------------------------deployment------------------------------
+
 //Error Handling
 app.use(notFound);
 app.use(errorHandler);
