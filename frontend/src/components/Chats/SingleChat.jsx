@@ -21,7 +21,11 @@ import { getSender, getSenderFull } from "../../config/ChatLogic";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import animationData from "../../animations/typing.json";
 
-const ENDPOINT = "http://localhost:5000";
+//Local env
+// const ENDPOINT = "http://localhost:5000";
+
+//heroku env
+const ENDPOINT = "https://chatify-app-heroku.herokuapp.com/";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
